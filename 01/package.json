@@ -1,0 +1,14 @@
+{
+  "name": "maximiliaan",
+  "version": "1.0.0",
+  "description": "because it's possible",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MaximiliaanPieter",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}

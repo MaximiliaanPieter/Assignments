@@ -1,0 +1,9 @@
+
+  Usage: boom [options]
+
+  Options:
+
+    -h, --help             output usage information
+    -V, --version          output the version number
+    -l, --language [code]  Language
+
