@@ -1,0 +1,12 @@
+
+  Usage: boekhandelv2 [options]
+
+  Options:
+
+    -h, --help             output usage information
+    -V, --version          output the version number
+    -t, --title [Titel]    Boektitel
+    -a, --author [Auteur]  Auteur
+    -p, --price [Prijs]    Prijs
+    -k, --kind [Soort]     Soort (Hardcover/Paperback)
+
