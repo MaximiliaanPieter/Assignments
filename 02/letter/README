@@ -1,0 +1,10 @@
+
+  Usage: Hillary [options]
+
+  Options:
+
+    -h, --help               output usage information
+    -V, --version            output the version number
+    -q, --question [Vraag]   Question generation
+    -a, --answer [Antwoord]  Answer generation
+
