@@ -65,7 +65,6 @@ const antw3 = [' is the answer', ' is the solution', ' is the only answer', ' is
 	//always maybe
 
 
-
 // Question/Answer variations Hillary
 
 var question = 'Hillary';
@@ -78,6 +77,8 @@ program
   .version('The Hillary Q&A generator 1.0')
   .option('-q, --question [Vraag]', 'Question generation: i.e. Type -> "-q Hillary"')
   .option('-a, --answer [Antwoord]', 'Answer generation: i.e. Type -> "-a Hillary"')
+  .option('-w, --width [Breedte]', 'Width of the answer: i.e. Type -> "60"')
+  .option('-s, --sentences [Aantal]', 'Number of sentences (usable when genereating an answer): i.e. Type -> "5"')
   .parse(process.argv);
 
 
@@ -125,6 +126,17 @@ function longvr() {
 //Example:	[Talking about]+[(our)]+[(great)]+[muslims], +[I]+[(firmly)]+[recommend]+[accepting]+[(their)]+[(lovable)]+[shootings]+[would make America great again].
 
 
+//Variable for width
+
+	var width = parseInt(program.width)
+
+//variable for numer of sentences
+
+	var sentences = parseInt(program.sentences)
+
+
+
+
 //word-wrap shortvr
 	var text1 = shortvr();
 
@@ -138,9 +150,9 @@ function longvr() {
 		
 	
 
-//Word-wrap longantw	
+//Word-wrap longantw	inserted a parseInt to control the amount of sentences that will be printed.
 	 var text4 = '';
- 		for(var i = 0; i < 3; i++){
+ 		for(var i = 0; i < parseInt(program.sentences); i++){
 
  			text4 += longantw();
 	}	//Only necessary loop
@@ -152,9 +164,9 @@ function longvr() {
 switch(program.question) { 
 	case question:
 		console.log('\n\n');
-	 	console.log(wrap(text1, {'width': 65}));
+	 	console.log(wrap(text1, {width}));
 	 	console.log('\n');
-	 	console.log(wrap(text2, {'width': 65}));
+	 	console.log(wrap(text2, {width}));
 	 	console.log('\n\n');
 	 	break;
 }
@@ -162,9 +174,9 @@ switch(program.question) {
 switch(program.answer) {
 	case answer:
 		console.log('\n\n')
-		console.log(wrap(text3, {'width': 65}));
+		console.log(wrap(text3, {width}));
 		console.log('\n')
-		console.log(wrap(text4, {'width': 65}));
+		console.log(wrap(text4, {width}));
 	 	console.log('\n\n');
 		break;
 }

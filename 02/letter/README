@@ -1,10 +1,12 @@
 
-  Usage: hillary [options]
+  Usage: Hillary [options]
 
   Options:
 
-    -h, --help               output usage information
-    -V, --version            output the version number
-    -q, --question [Vraag]   Question generation: i.e. Type -> "-q Hillary"
-    -a, --answer [Antwoord]  Answer generation: i.e. Type -> "-a Hillary"
+    -h, --help                output usage information
+    -V, --version             output the version number
+    -q, --question [Vraag]    Question generation: i.e. Type -> "-q Hillary"
+    -a, --answer [Antwoord]   Answer generation: i.e. Type -> "-a Hillary"
+    -w, --width [Breedte]     Width of the answer: i.e. Type -> "60"
+    -s, --sentences [Aantal]  Number of sentences (usable when genereating an answer): i.e. Type -> "5"
 
