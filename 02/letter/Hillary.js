@@ -76,8 +76,8 @@ var answer = 'Hillary';
 
 program
   .version('The Hillary Q&A generator 1.0')
-  .option('-q, --question [Vraag]', 'Question generation')
-  .option('-a, --answer [Antwoord]', 'Answer generation')
+  .option('-q, --question [Vraag]', 'Question generation: i.e. Type -> "-q Hillary"')
+  .option('-a, --answer [Antwoord]', 'Answer generation: i.e. Type -> "-a Hillary"')
   .parse(process.argv);
 
 
