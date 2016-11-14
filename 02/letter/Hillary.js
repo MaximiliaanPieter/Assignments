@@ -130,7 +130,7 @@ function longvr() {
 
 	var width = parseInt(program.width)
 
-//variable for numer of sentences
+//variable for number of sentences
 
 	var sentences = parseInt(program.sentences)
 
