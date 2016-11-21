@@ -1,0 +1,149 @@
+<!-- HTML code for Hillabot Beta©. -->
+
+<html>
+
+	<head>	
+		<title>HILLABOT Beta</title>	
+		
+		<style>
+			/* CSS Styling */
+			#frame {
+				width: 30em;
+			}
+			textarea {
+				width: 100%;
+				border: 1px solid #888;
+				padding: 10px;
+			}
+			#inputs, #text_field {
+				width: 100%;
+			}
+		</style>
+
+	</head>
+
+<!-- Giving it a nice color -->
+<body bgcolor="#f9e79f">
+
+<!-- Just setting the font -->
+	<font face="Garamond" size="5" color="#2e86c1">
+
+<!-- Title -->
+	<header>
+
+		<img src="http://d3n8a8pro7vhmx.cloudfront.net/dplac/sites/1/meta_images/original/dem-donkey-right-copy.png?1413244000" 		align="left" length=5% width="5%">
+		<h1 align="center">Hillachat</h1>
+
+	</header>
+
+<!-- Just trying some extra's in HTML. Why not clicking on that nice ladies thumbs up?-->
+<!-- Adjusted the size and place for the image.-->
+	<p>
+		<a href="http://www.youtube.com/watch?v=TlqKFlU7YAs" target="_blank">
+			<img src="http://static4.businessinsider.com/image/55fad9869dd7cc15008bb1ba-480/hillary-clinton-thumbs-up.jpg" alt="Hillary" align="right" >
+		</a>
+	</p>
+		
+		<!-- HTML -->
+		<label>Chatbox</label>
+		<div id="frame">
+
+			<!-- text area where the conversation is displayed -->
+			<textarea id="conversation" readonly placeholder="Hello there. If I'm feeling well enough, I'll give you my opinion on various political issues." text=... rows="10" cols="65"></textarea>
+
+		<font size="5">
+			
+			<!-- inputs from human to send to server -->
+			<div id="inputs">
+				<label>Please ask.. </label>
+				<input id="text_field" type="text" spellcheck onfocus="this.placeholder = 'But remember to keep some distance!'" onblur="this.placeholder = ..your question" placeholder="..your question" onkeydown="enter_message();"/>
+					
+					<!-- Script that makes the ENTERkey usable for sending the message -->
+					<script>
+						function enter_message() {
+							if(event.keyCode == 13) {
+								send_message();
+							}
+						}
+					</script> <!-- Thanks! Turns out Firefox was the problem, it doesn't recognize this script. Chrome does. -->
+
+				<input type="button" id="send_button" value="Send" onclick="send_message();"/>
+				</div>
+		</div>	
+
+	<footer>
+
+<!-- Gimme some space, please. -->
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	
+
+<!-- And well. Since I worked that long on this, why not something extra.. -->
+	<a href="http://media.giphy.com/media/26ufjScyNoyGvV3eE/giphy.gif" target="_blank">
+			<div id="Wheraboutbutton">
+					<script>
+						function play(){
+      					var audio = document.getElementById("audio");
+      					this.currentTime = 12;
+       					audio.play();
+                 		}
+					</script>
+				<input type="button" id="Whereabouts" value="Check Hillary's current whereabouts" onclick="play();"/>
+				<audio id="audio" src="http://www.imslp.org/images/3/3a/PMLP05472-PURCELL_Dido_and_Aeneas_%28Thy_Hand%2C_Belinda-When_I_am_laid-With_drooping_wings%29_by_New_Trinity_Baroque.mp3"></audio> <!-- Audio does not always dowload in Chrome. It does in other browsers. -->
+			</div>
+	</a>
+
+<br>
+<!-- created a footnote in a smaller font-->
+		<font size="3" color="black">
+
+		<f1><i>Hillabot Beta</i>© features official opinions last refined on 20/11/2016.</f1>
+
+	</footer>
+
+	</font>
+
+		<!-- SCRIPTS -->
+		<!-- import socket.io -->
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+
+			// connect to localhost on its port (see server.js -- 8088)
+		  var socket = io().connect('http://localhost:8088');
+
+		  // when connecting 
+		  socket.on('connect', function (data) {
+		  	console.log('We are now live with Hillary');
+		  });
+
+		   // when receiving a custom message form the server ('message from robot')
+ 	socket.on('Hillabot:', function(msg) {
+
+ 
+		document.getElementById("conversation").value += 'Hillary: ' + msg + '\n';
+
+		console.log('Hillary: ' + msg);
+ 	});
+
+ 		function send_message() {
+
+			var text = document.getElementById("text_field").value;
+
+			document.getElementById("conversation").value += 'U: ' + text + '\n';
+
+ 			socket.emit('message from human', text);
+
+			document.getElementById("text_field").value = '';
+  
+ }
+
+		</script>
+
+	</body>			
+
+</html>
