@@ -1,12 +1,12 @@
 {
-  "name": "server",
+  "name": "Hillabot Beta©",
   "version": "1.0.0",
   "description": "simple http and websocket server",
-  "main": "server.js",
+  "main": "Hillabot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "gauthier",
+  "author": "R.L. Gandolahage",
   "license": "ISC",
   "dependencies": {
     "chance": "^1.0.4",
