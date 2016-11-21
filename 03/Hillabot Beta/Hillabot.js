@@ -55,7 +55,7 @@ function matches(msg, array_of_patterns) {
   for(var i = 0; i < array_of_patterns.length; i++) {
     var pattern_lower = array_of_patterns[i].toLowerCase();
     if(msg_lower.search(pattern_lower) > -1) {           //searches for matches in the patterns as listed above
-      return true;
+u      return true;
     }
   }
   return false;
@@ -65,7 +65,7 @@ function matches(msg, array_of_patterns) {
 //General words for every answer
 
 const aanhef = ['Listen', 'Well, I think', 'The way I see it', 'Well,', 'Now,', 'Good question, I think', 'Such an original question,',
-                 "Yeah, well, let's skip this que... just kidding,", 'Hmm.. Let me think. Yes,'];
+o                 "Yeah, well, let's skip this que... just kidding,", 'Hmm.. Let me think. Yes,'];
 
 const ow = [' we', ' all Americans', ' we as a country', ' all of us', ' we, the sane people of this country,', ' me and my future government',
             ' all voters'];
@@ -75,7 +75,7 @@ const ww = [' have to', ' need to', ' got to', ' have got to', ' must', ' have n
 
 const wwpos = [' accept', ' welcome', ' embrace', ' help', ' comfort', ' entertain', ' adore', ' assist', ' aid', ' support', ' admire', ' care for', 
                ' strengthen'];
-
+Y
 const wwneg = [' solve', ' end', ' finish', 'seperate', ' register', ' cast out', ' delete', ' stop', ' secure', ' neglect', ' refuse'];
 
 const wwposlijd = [' accepted', ' welcomed', ' embraced', ' helped', ' comforted', ' entertained',  ' adored', ' supported', ' admired', ' cared for'];
@@ -96,8 +96,7 @@ const bijw = [' really', ' absolutely', ' finaly', ' definitely', ' positively',
 
 const acc = [' by you', ' by me', ' by us', ' by all voters', ' by all Americans', ' by good people', ' by our armed forces', ' by everyone'];
 
-const aanvul = [' in order to make America great again', ' if we want to survive', ' in our country', ' with a lot of talking', ' in the oval office', ' in America',
-                ' in the United States', ' if we want the world to like us', ' before the sun comes up', ' with your help', ' at the White House', ' in this amazing day and age'];
+const aanvul = [' in order to make America great again', ' if we want to survive', ' in our country', ' with a lot of talking', ' in the oval office', ' in America',                ' in the United States', ' if we want the world to like us', ' before the sun comes up', ' with your help', ' at the White House', ' in this amazing day and age'];
 
 const aanvul1 = ['Does that answer you question?', 'Please agree?', 'Right?', 'If you disagree, let us talk about it.', "That's what I think.",
                  'That is the way the cookie crumbles.', 'Satisfied?', 'Do you want to know anything else?', 
@@ -156,7 +155,7 @@ function maybe(array) {
       }
 
 
-// U uploaded a version with switches, but we already made the if-else statements. It works fine. (Maybe even easier when recycling a lot of words, like this script is doing.)
+// You uploaded a version with switches, but we already made the if-else statements. It works fine. (Maybe even easier when recycling a lot of words, like this script is doing.)
 
 function answer(msg) {
   if(matches(msg, pattern_1)) {
